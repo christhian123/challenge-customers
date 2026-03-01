@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: io.github.tig666.challenge_customers_api.ChallengeCustomersApiApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.347 s -- in io.github.tig666.challenge_customers_api.ChallengeCustomersApiApplicationTests

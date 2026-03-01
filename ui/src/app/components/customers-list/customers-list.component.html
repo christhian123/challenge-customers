@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="d-flex flex-row justify-content-between align-items-center mt-4">
+    <h1 class="mt-4 mb-4">Apliación para crear clientes</h1>
+    @if (!isLoading && customers.length != 0) {
+    <button class="btn btn-info ms-4" [hidden]="isLoading" (click)="openCustomerForm()">Crear cliente</button>
+    }
+  </div>
+
+  <div class="mt-4">
+    @if (isLoading) {
+    <div class="d-flex justify-content-center pt-4">
+      <div class="spinner-border" style="width: 10rem; height: 10rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    } @else if (!isError) {
+      @if (customers.length == 0) {
+        <div class="d-flex flex-column justify-content-between align-items-center mt-4 pt-4">
+          <h2>No se encotraron clientes</h2>
+          <h4>Comienza registrando la información de un cliente nuevo.</h4>
+          <button class="btn btn-info mt-4" [hidden]="isLoading" (click)="openCustomerForm()">Crear cliente</button>
+        </div>
+      } @else {
+        <table class="table align-middle">
+          <thead>
+            <tr class="table-active">
+              <th>Nro. de identificación</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Estado</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (customer of customers; track $index) {
+            <tr>
+              <td>{{customer.documentNumber}}</td>
+              <td>{{customer.name}}</td>
+              <td>{{customer.email}}</td>
+              @if (customer.active) {
+              <td><span class="badge bg-primary">Activo</span></td>
+              } @else {
+              <td><span class="badge bg-warning">Inactivo</span></td>
+              }
+              <td>
+                <button type="button" class="btn btn-sm btn-light" (click)="openCustomerForm(customer.documentNumber)">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      }
+    
+    } @else {
+      <div class="d-flex flex-column justify-content-between align-items-center mt-4 pt-4">
+        <h2>Ha ocurrido un error</h2>
+        <h4>=(</h4>
+      </div>
+    }
+  </div>
+</div>
