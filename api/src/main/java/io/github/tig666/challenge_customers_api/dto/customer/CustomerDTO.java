@@ -15,7 +15,7 @@ public class CustomerDTO {
     private Long documentNumber;
     @NotBlank(message = "El nombre del cliente es requerido.")
     private String name;
-    @Email(message = "El formatd del correo es inválido.")
+    @Email(message = "El formato del correo es inválido.")
     @NotBlank(message = "El correo del cliente es requerido.")
     private String email;
 }

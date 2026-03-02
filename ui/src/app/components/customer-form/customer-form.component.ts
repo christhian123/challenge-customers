@@ -164,6 +164,10 @@ export class CustomerFormComponent {
     }
   }
 
+  goList() {
+    this.router.navigate(['/']);
+  }
+
   displayToast(toastDescription: string, toastType: string) {
     this.showToast = false;
 
