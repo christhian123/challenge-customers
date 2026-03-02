@@ -1,0 +1,12 @@
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/ChallengeCustomersApiApplication.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/controller/CustomerController.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/dto/customer/CustomerDTO.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/dto/generic/ResponseGenericDTO.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/dto/generic/StatusDTO.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/entity/Customer.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/entity/generic/GeneralAudit.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/exception/DomainException.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/exception/GlobalExceptionHandler.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/repository/CustomerRepository.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/service/CustomerService.java
+/Users/CGUTI27/proyecto/ME/challenge-customers/api/src/main/java/io/github/tig666/challenge_customers_api/service/impl/CustomerServiceImpl.java

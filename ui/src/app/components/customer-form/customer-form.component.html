@@ -1,0 +1,65 @@
+
+<div class="container position-relative">
+
+  @if (showToast) {
+    <div class="alert alert-dismissible position-absolute start-50 translate-middle" [class]="toastType">
+      <button type="button" class="btn-close" (click)="showToast = false"></button>
+      <p class="mb-0">{{toastDescription}}</p>
+    </div>
+  }
+
+
+  <div id="title-container" class="mt-4 mb-4">
+    <a class="link-underline link-underline-opacity-0 fs-5" href="/list"><i class="bi bi-chevron-left"></i> Volver</a>
+    <h1 class="mt-4">{{formTitle}}</h1>
+    <h6>{{formDescription}}</h6>
+  </div>
+  <div id="form" class="mt-4">
+    @if (isLoading) {
+      <div class="d-flex justify-content-center pt-4">
+        <div class="spinner-border" style="width: 10rem; height: 10rem;" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    } @else {
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" formControlName="customerID" id="customerID"
+                placeholder="Nro. de identificación" tabindex="1" [disabled]="isEdit">
+              <label for="customerID">Nro. de identificación</label>
+            </div>
+  
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" formControlName="customerEmail" name="customerEmail"
+                id="customerEmail" placeholder="Correo" tabindex="3">
+              <label for="customerEmail">Correo</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" formControlName="customerName" id="customerName"
+                placeholder="Nombre" tabindex="2">
+              <label for="customerName">Nombre</label>
+            </div>
+            @if (isEdit) {
+            <div class="d-flex align-items-center pt-2">
+              @if (customer.active) {
+                <p class="my-auto">Estado: <span class="badge bg-primary">Activo</span></p>
+              } @else {
+                <p class="my-auto">Estado: <span class="badge bg-warning">Inactivo</span></p>
+              }
+              
+              <button class="btn btn-light ms-3" (click)="updateStatus()"><i class="bi bi-lock"></i></button>
+            </div>
+            }
+          </div>
+  
+        </div>
+  
+        <button class="btn btn-info mt-4" tabindex="4" (click)="sendForm()">Guardar</button>
+      </form>
+    }
+  </div>
+</div>
